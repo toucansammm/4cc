@@ -6,7 +6,7 @@
 #include <immintrin.h>
 #define _InterlockedExchangeAdd __sync_fetch_and_add
 #elif OS_MAC
-#include <immintrin.h>
+#define _mm_pause() __builtin_arm_yield()
 #define _InterlockedExchangeAdd __sync_fetch_and_add
 #else
 #include <intrin.h>
